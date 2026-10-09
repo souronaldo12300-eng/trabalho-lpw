@@ -1,4 +1,4 @@
-cartas [
+let cartas = [
     {
         valor: 1,
         numeroDaCarta: 1,
@@ -241,6 +241,66 @@ cartas [
     }
 ]
 
-function gerarNumeroAleatorio() {
-    return Math.floor(Math.random() * 40) + 1;
+let baralho = [...cartas]
+
+function puxarCartaAleatoria() {
+    if (baralho.length === 0) return null;
+    let indiceAleatorio = Math.floor(Math.random() * baralho.length);
+    return baralho.splice(indiceAleatorio, 1)[0]; 
+}
+
+let maoDoJogador = document.querySelector('#mao-do-jogador');
+let maoDoAdversario = document.querySelector('#mao-do-adversario');
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+    for(let i = 0; i < 3; i++) {
+        let carta = document.createElement('div');
+        let conteudoDaCarta = document.createElement('p');
+        let cartasorteada = puxarCartaAleatoria();
+        carta.classList.add('carta');
+        maoDoJogador.appendChild(carta);
+        carta.appendChild(conteudoDaCarta);
+        conteudoDaCarta.textContent = `${cartasorteada.nomeDaCarta} de ${cartasorteada.naipe}`;
+        carta.dataset.valor = cartasorteada.valor;
+        carta.addEventListener('click', function() {
+            if(carta.classList.contains('no-centro')){
+                carta.classList.remove('no-centro');
+                carta.classList.add('carta-jogada');
+                jogarCartaDoAdversario();
+            }
+        });
+        setTimeout(() => {
+            carta.classList.add('no-centro');
+        }, 1000 * (i + 1));
+    }
+
+    for(let i = 0; i < 3; i++) {
+        let carta = document.createElement('div');
+        let cartasorteada = puxarCartaAleatoria();
+        carta.classList.add('carta');
+        carta.style.backgroundImage = "url('img/carta-de-costas.png')";
+        carta.dataset.nome = `${cartasorteada.nomeDaCarta} de ${cartasorteada.naipe}`;
+        carta.dataset.valor = cartasorteada.valor;
+        maoDoAdversario.appendChild(carta);
+        setTimeout(() => {
+            carta.classList.add('no-centro');
+        }, 1000 * (i + 1));
+    }
+});
+
+let cartasDoJogador = maoDoJogador.querySelectorAll('.carta.no-centro');
+
+function jogarCartaDoAdversario() {
+    let cartasNaMao = maoDoAdversario.querySelectorAll('.carta.no-centro');
+    if(cartasNaMao.length > 0){
+        let cartaParaJogar = cartasNaMao[0];
+        let conteudoDaCarta = document.createElement('p');
+        cartaParaJogar.classList.remove('no-centro');
+        cartaParaJogar.classList.add('carta-do-adversario-jogada');
+        cartaParaJogar.style.backgroundImage = 'none';
+        conteudoDaCarta.textContent = cartaParaJogar.dataset.nome;
+        cartaParaJogar.appendChild(conteudoDaCarta);
+    }
 }

@@ -1,4 +1,56 @@
-p {
-    background-color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
+#mao-do-jogador {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    gap: 4vh;
+    bottom: 0vh;
+    transition: transform 1.5s ease-in-out;
+    
+}
+
+body{
+    background-image: url('img/imagem-de-fundo-da-mesa-de-truco.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#mao-do-adversario {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    gap: 4vh;
+
+    user-select: none;
+}
+
+.carta {
+    transform: translateX(-70vw);
+    transition: transform 1.5s ease-in-out;
+    width: 20vh;
+    height: 30vh;
+    padding: 1vh;
+    background-size: cover;
+    position: relative;
+}
+
+#mao-do-jogador:hover{
+    cursor: pointer;
+}
+
+.carta.no-centro {
+    transform: translateX(50vw);
+    left: -50%;
+}
+
+.carta.carta-do-adversario-jogada{
+    left: 100%;
+    transform: translateY(25vw);
+    top: -50%;
 }
