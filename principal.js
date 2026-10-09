@@ -265,9 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
         conteudoDaCarta.textContent = `${cartasorteada.nomeDaCarta} de ${cartasorteada.naipe}`;
         carta.dataset.valor = cartasorteada.valor;
         carta.addEventListener('click', function() {
+            const anguloMinimo = -25;
+            const anguloMaximo = 25;
+            const anguloAleatorio = Math.floor(Math.random() * (anguloMaximo - anguloMinimo + 1)) + anguloMinimo;
             if(carta.classList.contains('no-centro')){
                 carta.classList.remove('no-centro');
                 carta.classList.add('carta-jogada');
+                carta.style.transform = `translate(-50%, -50%) rotate(${anguloAleatorio}deg)`;
                 jogarCartaDoAdversario();
             }
         });
@@ -294,13 +298,19 @@ let cartasDoJogador = maoDoJogador.querySelectorAll('.carta.no-centro');
 
 function jogarCartaDoAdversario() {
     let cartasNaMao = maoDoAdversario.querySelectorAll('.carta.no-centro');
+    const anguloMinimo = -25;
+    const anguloMaximo = 25;
+    const anguloAleatorio = Math.floor(Math.random() * (anguloMaximo - anguloMinimo + 1)) + anguloMinimo;
     if(cartasNaMao.length > 0){
-        let cartaParaJogar = cartasNaMao[0];
-        let conteudoDaCarta = document.createElement('p');
-        cartaParaJogar.classList.remove('no-centro');
-        cartaParaJogar.classList.add('carta-do-adversario-jogada');
-        cartaParaJogar.style.backgroundImage = 'none';
-        conteudoDaCarta.textContent = cartaParaJogar.dataset.nome;
-        cartaParaJogar.appendChild(conteudoDaCarta);
+        setTimeout(() => {
+            let cartaParaJogar = cartasNaMao[0];
+            let conteudoDaCarta = document.createElement('p');
+            conteudoDaCarta.textContent = cartaParaJogar.dataset.nome;
+            cartaParaJogar.appendChild(conteudoDaCarta);
+                cartaParaJogar.style.backgroundImage = 'none';
+            cartaParaJogar.style.transform = `rotate(${anguloAleatorio}deg)`;
+            cartaParaJogar.classList.remove('no-centro');
+            cartaParaJogar.classList.add('carta-do-adversario-jogada');
+        }, 1000);
     }
 }

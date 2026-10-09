@@ -1,11 +1,12 @@
 #mao-do-jogador {
     display: flex;
     position: fixed;
+    left: 0;
+    width: 100%;
     justify-content: center;
     gap: 4vh;
-    bottom: 0vh;
+    bottom: 2vh;
     transition: transform 1.5s ease-in-out;
-    
 }
 
 body{
@@ -24,15 +25,17 @@ html, body {
 #mao-do-adversario {
     display: flex;
     position: fixed;
+    left: 0;
+    width: 100%;
     justify-content: center;
     gap: 4vh;
-
+    top: 2vh;
     user-select: none;
 }
 
 .carta {
     transform: translateX(-70vw);
-    transition: transform 1.5s ease-in-out;
+    transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
     width: 20vh;
     height: 30vh;
     padding: 1vh;
@@ -50,7 +53,14 @@ html, body {
 }
 
 .carta.carta-do-adversario-jogada{
-    left: 100%;
-    transform: translateY(25vw);
-    top: -50%;
+    position: fixed;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.carta.carta-jogada{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    z-index: 10;
 }
