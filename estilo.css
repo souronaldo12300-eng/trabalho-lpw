@@ -57,10 +57,13 @@ html, body {
     top: 40%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    user-select: none;
+    pointer-events: none;
 }
 .carta.carta-jogada{
     position: fixed;
     top: 55%;
     left: 50%;
     z-index: 10;
+    pointer-events: none;
 }

@@ -285,6 +285,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let cartasorteada = puxarCartaAleatoria();
         carta.classList.add('carta');
         carta.style.backgroundImage = "url('img/carta-de-costas.png')";
+        carta.style.backgroundSize = "cover";
+        carta.style.backgroundPosition = "center";
         carta.dataset.nome = `${cartasorteada.nomeDaCarta} de ${cartasorteada.naipe}`;
         carta.dataset.valor = cartasorteada.valor;
         maoDoAdversario.appendChild(carta);
