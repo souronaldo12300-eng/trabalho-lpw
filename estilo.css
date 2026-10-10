@@ -10,9 +10,13 @@
 }
 
 body{
-    background-image: url('img/imagem-de-fundo-da-mesa-de-truco.png');
+    background-image: url('imgs/imagem-de-fundo-da-mesa-de-truco.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.antes-de-decidir{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imgs/imagem-de-fundo-da-mesa-de-truco.png');
 }
 
 html, body {
@@ -22,7 +26,7 @@ html, body {
     width: 100%;
 }
 
-#mao-do-adversario {
+#mao-do-adversario-1 {
     display: flex;
     position: fixed;
     left: 0;
@@ -34,13 +38,90 @@ html, body {
 }
 
 .carta {
-    transform: translateX(-70vw);
+    transform: translateX(-100vw);
     transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
     width: 20vh;
     height: 30vh;
     padding: 1vh;
     background-size: cover;
     position: relative;
+}
+
+.carta-2v2{
+    transform: translateX(-100vw);
+    transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
+    width: 10vh;
+    height: 15vh;
+    padding: 1vh;
+    background-size: cover;
+    position: relative;
+}
+
+.carta-2v2.carta-jogada{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+}
+
+.carta-2v2.carta-do-adversario-jogada{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    pointer-events: none;
+}
+
+.carta-2v2-adversario-2-L.no-centro,
+.carta-2v2-adversario-3-L.no-centro{
+    transform: translateY(0) rotate(90deg);
+    transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
+
+}
+
+.carta-2v2-adversario-3-L.carta-do-adversario-jogada{
+    position: fixed;
+    z-index: 12;
+    top: 7vh;
+    left: 50%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.carta-2v2.no-centro{
+    transform: translateX(50vw);
+    transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
+    left: -50%;
+}
+
+#mao-do-adversario-2{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 4vw;
+
+}
+
+#mao-do-adversario-3{
+    top: 50%;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin-right: 4vw;
+    flex-direction: column;
+}
+
+.carta-2v2-adversario-2-L,
+.carta-2v2-adversario-3-L{
+    transform: translateX(-100vw);
+    width: 10vh;
+    height: 15vh;
 }
 
 #mao-do-jogador:hover{
@@ -56,7 +137,7 @@ html, body {
     position: fixed;
     top: 40%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 11;
     user-select: none;
     pointer-events: none;
 }
@@ -66,4 +147,36 @@ html, body {
     left: 50%;
     z-index: 10;
     pointer-events: none;
+}
+.menu-de-botoes {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2vh 2vw;
+    gap: 2vw;
+    z-index: 100;
+    user-select: none;
+}
+
+.botao-de-jogar {
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: top 1.5s ease-in-out, right 1.5s ease-in-out;
+}
+
+.botao-de-jogar:active {
+    top: 10px;
+    right: 10px;
+}
+
+.ja-escolheu{
+    background-color: transparent;
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+    display: none;
 }

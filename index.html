@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truquinho Dos Crias</title>
-    <link rel="shortcut icon" href="img/logomarca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/logomarca.png" type="image/x-icon">
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div id="mao-do-adversario"></div>
+    <div class="menu-de-botoes">
+        <!-- <button class="botao-de-jogar" id="jogo-2v2">2v2<br><i class="comentario">(2 players e 2 bots)</i></button> -->
+        <!-- <button class="botao-de-jogar" id="jogo-4p">2v2<br><i class="comentario">(4 players)</i></button> -->
+        <button class="botao-de-jogar" id="jogo-1v3">2v2<br><i class="comentario">(1 players e 3 bots)</i></button>
+        <!--<button class="botao-de-jogar" id="jogo-2p">1v1<br><i class="comentario">(2 players)</i></button>-->
+        <button class="botao-de-jogar" id="jogo-1v1">1v1<br><i class="comentario">(1 players e 1 bot)</i></button>
+    </div>
+    <div id="mao-do-adversario-1"></div>
+    <div id="mao-do-adversario-2"></div>
+    <div id="mao-do-adversario-3"></div>
     <div id="mao-do-jogador"></div>
     <script src="principal.js"></script>
 </body>
