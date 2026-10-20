@@ -423,7 +423,7 @@ function jogarCartaDoAdversario1() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate(-50%, -50%) rotate(${anguloAleatorio}deg)`;
+            cartaParaJogar.style.transform = `translate3d(-50%, -50%, 2px) rotate(${anguloAleatorio}deg)`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
@@ -439,7 +439,7 @@ function jogarCartaDoAdversario2() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate(-46vw, 2vh) rotate(${anguloAleatorio+90})`;
+            cartaParaJogar.style.transform = `translate3d(calc(50vw - 4vw), -50%, 3px) rotate(${anguloAleatorio+90})`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
@@ -455,7 +455,7 @@ function jogarCartaDoAdversario3() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate(-46vw, 2vh) rotate(${anguloAleatorio+90}`;
+            cartaParaJogar.style.transform = `translate3d(calc(-50vw + 4vw), -50%, 4px) rotate(${anguloAleatorio+90}deg)`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
