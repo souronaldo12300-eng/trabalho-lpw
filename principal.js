@@ -255,6 +255,7 @@ let maoDoAdversario2 = document.querySelector('#mao-do-adversario-2');
 let maoDoAdversario3 = document.querySelector('#mao-do-adversario-3');
 let botaoDe1v1 = document.querySelector('#jogo-1v1');
 let botaoDe1v3 = document.querySelector('#jogo-1v3');
+let botaoTruco = document.querySelector('#botao-truco');
 let corpoDaPagina = document.querySelector("body");
 let todosOsBotoesDeJogar = document.querySelectorAll(".botao-de-jogar");
 const rect = corpoDaPagina.getBoundingClientRect();
@@ -266,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 botaoDe1v1.addEventListener('click', function() {
+    botaoTruco.style.display = "block";
     corpoDaPagina.classList.remove("antes-de-decidir")
     todosOsBotoesDeJogar.forEach(botao => {
         botao.classList.add("ja-escolheu");
@@ -312,6 +314,7 @@ botaoDe1v1.addEventListener('click', function() {
 });
 
 botaoDe1v3.addEventListener('click', function(){
+    botaoTruco.style.display = "block";
     corpoDaPagina.classList.remove("antes-de-decidir")
     todosOsBotoesDeJogar.forEach(botao => {
         botao.classList.add("ja-escolheu");
@@ -465,124 +468,124 @@ function jogarCartaDoAdversario3() {
 function qualCartaÉ(carta ,numeroDaCarta){
     switch (numeroDaCarta) {
         case 1:
-            carta.style.backgroundImage = "url('imgs/4_de_paus.png')";
+            carta.style.backgroundImage = "url('imgs/cards/C4.png')";
             break;
         case 2:
-            carta.style.backgroundImage = "url('imgs/7_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/H7.png')";
             break;
         case 3:
-            carta.style.backgroundImage = "url('imgs/A_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/SA.png')";
             break;
         case 4:
-            carta.style.backgroundImage = "url('imgs/7_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D7.png')";
             break;
         case 5:
-            carta.style.backgroundImage = "url('imgs/3_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/C3.png')";
             break;
         case 6:
-            carta.style.backgroundImage = "url('imgs/3_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/H3.png')";
             break;
         case 7:
-            carta.style.backgroundImage = "url('imgs/3_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S3.png')";
             break;
         case 8:
-            carta.style.backgroundImage = "url('imgs/3_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D3.png')";
             break;
         case 9:
-            carta.style.backgroundImage = "url('imgs/2_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/C2.png')";
             break;
         case 10:
-            carta.style.backgroundImage = "url('imgs/2_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/H2.png')";
             break;
         case 11:
-            carta.style.backgroundImage = "url('imgs/2_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S2.png')";
             break;
         case 12:
-            carta.style.backgroundImage = "url('imgs/2_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D2.png')";
             break;
         case 13:
-            carta.style.backgroundImage = "url('imgs/A_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/CA.png')";
             break;
         case 14:
-            carta.style.backgroundImage = "url('imgs/A_de_copas.png')";
+            carta.style.backgroundImage = "url('imgs/cards/HA.png')";
             break;
         case 15:
-            carta.style.backgroundImage = "url('imgs/A_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/DA.png')";
             break;
         case 16:
-            carta.style.backgroundImage = "url('imgs/K_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/CK.png')";
             break;
         case 17:
-            carta.style.backgroundImage = "url('imgs/K_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/HK.png')";
             break;
         case 18:
-            carta.style.backgroundImage = "url('imgs/K_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/SK.png')";
             break;
         case 19:
-            carta.style.backgroundImage = "url('imgs/K_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/DK.png')";
             break;
         case 20:
-            carta.style.backgroundImage = "url('imgs/J_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/CJ.png')";
             break;
         case 21:
-            carta.style.backgroundImage = "url('imgs/J_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/HJ.png')";
             break;
         case 22:
-            carta.style.backgroundImage = "url('imgs/J_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/SJ.png')";
             break;
         case 23:
-            carta.style.backgroundImage = "url('imgs/J_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/DJ.png')";
             break;
         case 24:
-            carta.style.backgroundImage = "url('imgs/Q_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/CQ.png')";
             break;
         case 25:
-            carta.style.backgroundImage = "url('imgs/Q_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/HQ.png')";
             break;
         case 26:
-            carta.style.backgroundImage = "url('imgs/Q_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/SQ.png')";
             break;
         case 27:
-            carta.style.backgroundImage = "url('imgs/Q_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/DQ.png')";
             break;
         case 28:
-            carta.style.backgroundImage = "url('imgs/7_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/C7.png')";
             break;
         case 29:
-            carta.style.backgroundImage = "url('imgs/7_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S7.png')";
             break;
         case 30:
-            carta.style.backgroundImage = "url('imgs/6_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/C6.png')";
             break;
         case 31:
-            carta.style.backgroundImage = "url('imgs/6_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/H6.png')";
             break;
         case 32:
-            carta.style.backgroundImage = "url('imgs/6_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S6.png')";
             break;
         case 33:
-            carta.style.backgroundImage = "url('imgs/6_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D6.png')";
             break;
         case 34:
-            carta.style.backgroundImage = "url('imgs/5_de_paus.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/C5.png')";
             break;
         case 35:
-            carta.style.backgroundImage = "url('imgs/5_de_copas.png')";
+            carta.style.backgroundImage = "url('imgs/cards/H5.png')";
             break;
         case 36:
-            carta.style.backgroundImage = "url('imgs/5_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S5.png')";
             break;
         case 37:
-            carta.style.backgroundImage = "url('imgs/5_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D5.png')";
             break;
         case 38:
-            carta.style.backgroundImage = "url('imgs/4_de_copas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/H4.png')";
             break;
         case 39:
-            carta.style.backgroundImage = "url('imgs/4_de_espadas.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/S4.png')";
             break;
         case 40:
-            carta.style.backgroundImage = "url('imgs/4_de_ouros.png')";
+            carta.style.backgroundImage =  "url('imgs/cards/D4.png')";
             break;
         default:
             break;

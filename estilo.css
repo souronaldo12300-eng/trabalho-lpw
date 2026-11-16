@@ -180,3 +180,22 @@ html, body {
     pointer-events: none;
     display: none;
 }
+
+#botao-truco{
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    right: 150px;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 15px;
+}
+
+button {
+    transition: transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
