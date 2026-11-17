@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 botaoDe1v1.addEventListener('click', function() {
+    valorEl.value = valores[indice];
     placar.style.display = "flex";
     botaoTruco.style.display = "block";
     corpoDaPagina.classList.remove("antes-de-decidir")
@@ -402,6 +403,7 @@ botaoDe1v3.addEventListener('click', function(){
 });
 
 function jogarCartaDoAdversario1v1() {
+    valorEl.value = valores[indice];
     let cartasNaMao = maoDoAdversario1.querySelectorAll('.carta.no-centro');
     const anguloMinimo = -25;
     const anguloMaximo = 25;
@@ -597,17 +599,20 @@ function qualCartaÉ(carta ,numeroDaCarta){
     carta.style.backgroundPosition = 'center';
 }
 
-let pontuacao1 = document.querySelector('#Equipe1 span');
-let pontuacao2 = document.querySelector('#Equipe2 span');
-let valorEl = document.querySelector('#valor-da-mao span');
+let pontuacao1 = document.querySelector('#pontos_da_equipe1');
+let pontuacao2 = document.querySelector('#pontos_da_equipe2');
+let valorEl = document.querySelector('#span_do_valor_da_mao');
+pontuacao1.value = 0;
+pontuacao2.value = 0;
 let valorMao = 2;
 let valores = [2, 4, 6, 9, 12];
 let indice = 0;
 let botaoTruco = document.querySelector('#botao-truco');
-botaoTruco.addEventListener("click", function(){
-    if(indice < 4)
-        indice++;
 
-    valorMao = valores[indice];
-    valorEl.innerHTML = valorMao;
+botaoTruco.addEventListener("click", function(){
+    if(indice === 4){
+        return;
+    }
+    indice = indice+1;
+    valorEl.value = valores[indice];
 });
