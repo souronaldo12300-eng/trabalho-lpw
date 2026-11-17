@@ -46,6 +46,7 @@ html, body {
     padding: 1vh;
     background-size: cover;
     position: relative;
+    pointer-events: all;
 }
 
 .carta-2v2{
@@ -135,16 +136,15 @@ html, body {
 }
 
 .carta.carta-do-adversario-jogada{
-    position: absolute;
-    top: 40%;
-    transform: translate(-50%, -50%);
+    top: -50%;
     z-index: 11;
+    position: absolute;
     user-select: none;
     pointer-events: none;
 }
 .carta.carta-jogada{
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     z-index: 10;
     pointer-events: none;

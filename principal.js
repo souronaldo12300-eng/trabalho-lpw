@@ -290,7 +290,7 @@ botaoDe1v1.addEventListener('click', function() {
                 carta.classList.remove('no-centro');
                 carta.classList.add('carta-jogada');
                 qualCartaÉ(carta ,carta.dataset.numeroDaCarta);
-                carta.style.transform = `translate(-50%, -50%) rotate(${anguloAleatorio}deg)`;
+                carta.style.transform = `translate3d(-50%, -50vh, 2px) rotate(${anguloAleatorio}deg)`;
                 jogarCartaDoAdversario1v1();
             }
         });
@@ -413,7 +413,7 @@ function jogarCartaDoAdversario1v1() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `rotate(${anguloAleatorio}deg)`;
+            cartaParaJogar.style.transform = `translate3d(0, 50vh, 3px) rotate(${anguloAleatorio}deg)`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
