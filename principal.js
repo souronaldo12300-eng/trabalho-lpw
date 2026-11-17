@@ -256,6 +256,7 @@ let maoDoAdversario3 = document.querySelector('#mao-do-adversario-3');
 let botaoDe1v1 = document.querySelector('#jogo-1v1');
 let botaoDe1v3 = document.querySelector('#jogo-1v3');
 let botaoTruco = document.querySelector('#botao-truco');
+let placar = document.querySelector('.placar');
 let corpoDaPagina = document.querySelector("body");
 let todosOsBotoesDeJogar = document.querySelectorAll(".botao-de-jogar");
 const rect = corpoDaPagina.getBoundingClientRect();
@@ -267,6 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 botaoDe1v1.addEventListener('click', function() {
+    placar.style.display = "flex";
     botaoTruco.style.display = "block";
     corpoDaPagina.classList.remove("antes-de-decidir")
     todosOsBotoesDeJogar.forEach(botao => {
@@ -315,6 +317,7 @@ botaoDe1v1.addEventListener('click', function() {
 
 botaoDe1v3.addEventListener('click', function(){
     botaoTruco.style.display = "block";
+    placar.style.display = "flex";
     corpoDaPagina.classList.remove("antes-de-decidir")
     todosOsBotoesDeJogar.forEach(botao => {
         botao.classList.add("ja-escolheu");
@@ -594,3 +597,14 @@ function qualCartaÉ(carta ,numeroDaCarta){
     carta.style.backgroundSize = 'cover';
     carta.style.backgroundPosition = 'center';
 }
+
+let valorMao = 2;
+let valores = [2, 4, 6, 9, 12];
+let indice = 0;
+
+botaoTruco.addEventListener("click", function(){
+    if(indice < 4)
+        indice++;
+
+    valorMao = valores[indice];
+});

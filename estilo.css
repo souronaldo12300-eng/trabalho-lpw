@@ -199,3 +199,58 @@ button:active {
     transform: scale(0.95);
 }
 
+.placar {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 220px;
+}
+
+#Equipe1 {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    width: 150px;
+    padding: 15px;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#Equipe2 {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    width: 150px;
+    padding: 15px;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#valor-da-mão {
+    position: absolute;
+    top: 180px;
+    left: 80px;
+    padding: 12px 25px;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.placar h2 {
+    font-size: 18px;
+    margin: 5px;
+}
+
+.placar span {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
