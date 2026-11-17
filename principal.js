@@ -255,7 +255,6 @@ let maoDoAdversario2 = document.querySelector('#mao-do-adversario-2');
 let maoDoAdversario3 = document.querySelector('#mao-do-adversario-3');
 let botaoDe1v1 = document.querySelector('#jogo-1v1');
 let botaoDe1v3 = document.querySelector('#jogo-1v3');
-let botaoTruco = document.querySelector('#botao-truco');
 let placar = document.querySelector('.placar');
 let corpoDaPagina = document.querySelector("body");
 let todosOsBotoesDeJogar = document.querySelectorAll(".botao-de-jogar");
@@ -338,7 +337,7 @@ botaoDe1v3.addEventListener('click', function(){
                 carta.classList.remove('no-centro');
                 carta.classList.add('carta-jogada');
                 qualCartaÉ(carta ,carta.dataset.numeroDaCarta);
-                carta.style.transform = `translate(-50%, -50%) rotate(${anguloAleatorio}deg)`;
+                carta.style.transform = `translate3d(-50%, -50vh, 2px) rotate(${anguloAleatorio}deg)`;
                 setTimeout(() => {
                     jogarCartaDoAdversario2();
                     setTimeout(() => {
@@ -429,7 +428,7 @@ function jogarCartaDoAdversario1() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate3d(-50%, -50%, 2px) rotate(${anguloAleatorio}deg)`;
+            cartaParaJogar.style.transform = `translate3d(-50%,calc(50vh - 19vh), 2px) rotate(${anguloAleatorio}deg)`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
@@ -445,7 +444,7 @@ function jogarCartaDoAdversario2() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate3d(calc(50vw - 4vw), -50%, 3px) rotate(${anguloAleatorio+90})`;
+            cartaParaJogar.style.transform = `translate3d(calc(-50vw + 4vw), +50%, 3px) rotate(${anguloAleatorio+90})`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
@@ -461,7 +460,7 @@ function jogarCartaDoAdversario3() {
             let cartaParaJogar = cartasNaMao[0];
             cartaParaJogar.style.backgroundImage = 'none';
             qualCartaÉ(cartaParaJogar ,+cartaParaJogar.dataset.numeroDaCarta);
-            cartaParaJogar.style.transform = `translate3d(calc(-50vw + 4vw), -50%, 4px) rotate(${anguloAleatorio+90}deg)`;
+            cartaParaJogar.style.transform = `translate3d(calc(-50vw + 4vw), -50%, 4px) rotate(${anguloAleatorio}deg)`;
             cartaParaJogar.classList.remove('no-centro');
             cartaParaJogar.classList.add('carta-do-adversario-jogada');
         }, 1000);
@@ -598,13 +597,17 @@ function qualCartaÉ(carta ,numeroDaCarta){
     carta.style.backgroundPosition = 'center';
 }
 
+let pontuacao1 = document.querySelector('#Equipe1 span');
+let pontuacao2 = document.querySelector('#Equipe2 span');
+let valorEl = document.querySelector('#valor-da-mao span');
 let valorMao = 2;
 let valores = [2, 4, 6, 9, 12];
 let indice = 0;
-
+let botaoTruco = document.querySelector('#botao-truco');
 botaoTruco.addEventListener("click", function(){
     if(indice < 4)
         indice++;
 
     valorMao = valores[indice];
+    valorEl.innerHTML = valorMao;
 });

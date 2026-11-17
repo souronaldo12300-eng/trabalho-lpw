@@ -1,6 +1,6 @@
 #mao-do-jogador {
     display: flex;
-    position: fixed;
+    position: absolute;
     left: 0;
     width: 100%;
     justify-content: center;
@@ -28,7 +28,7 @@ html, body {
 
 #mao-do-adversario-1 {
     display: flex;
-    position: fixed;
+    position: absolute;
     left: 0;
     width: 100%;
     justify-content: center;
@@ -58,7 +58,7 @@ html, body {
 }
 
 .carta-2v2.carta-jogada{
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     user-select: none;
@@ -66,7 +66,7 @@ html, body {
 }
 
 .carta-2v2.carta-do-adversario-jogada{
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     pointer-events: none;
@@ -80,7 +80,7 @@ html, body {
 }
 
 .carta-2v2-adversario-3-L.carta-do-adversario-jogada{
-    position: fixed;
+    position: absolute;
     z-index: 12;
     top: 50%;
     left: 50%;
@@ -97,7 +97,7 @@ html, body {
 #mao-do-adversario-2{
     transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
     display: flex;
-    position: fixed;
+    position: absolute;
     flex-direction: column;
     top: 50%;
     transform: translateY(-50%);
@@ -109,7 +109,7 @@ html, body {
     transition: transform 1.5s ease-in-out, top 1.5s ease-in-out, left 1.5s ease-in-out;
     top: 50%;
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
@@ -134,7 +134,7 @@ html, body {
 }
 
 .carta.carta-do-adversario-jogada{
-    position: fixed;
+    position: absolute;
     top: 40%;
     transform: translate(-50%, -50%);
     z-index: 11;
@@ -142,7 +142,7 @@ html, body {
     pointer-events: none;
 }
 .carta.carta-jogada{
-    position: fixed;
+    position: absolute;
     top: 55%;
     left: 50%;
     z-index: 10;
